@@ -8,3 +8,9 @@
 - Authorization
 - Add authorization to socket
 -
+
+## Run
+
+```bush
+yarn dev
+```
