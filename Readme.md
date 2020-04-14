@@ -25,3 +25,15 @@ yarn dev
 ```
 yarn test
 ```
+
+## Socket.io Event
+
+The app would load as localhost:4001, to test the `subscribe` event, user can use socket.io tester to send json message like following:
+
+```json
+{
+  "stocks": ["5 HK", "CINE LN"]
+}
+```
+
+and listen event `subscribe` to receive data string
