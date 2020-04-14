@@ -1,17 +1,14 @@
-const app = require("express")();
-const server = require("http").Server(app);
-const io = require("socket.io")(server);
+const DUMMY_DATE = "2017/07/26";
 
-server.listen(process.env.PORT || 4001);
-// WARNING: app.listen(80) will NOT work here!
+const current = () => {
+  const serverTime = new Date();
+  const dummyYear = parseInt(DUMMY_DATE.split("/")[0], 10);
+  const dummyMonth = parseInt(DUMMY_DATE.split("/")[1], 10);
+  const dummyDate = parseInt(DUMMY_DATE.split("/")[2], 10);
+  serverTime.setFullYear(dummyYear);
+  serverTime.setMonth(dummyMonth - 1);
+  serverTime.setDate(dummyDate);
+  return serverTime;
+};
 
-app.get("/", function (req, res) {
-  res.sendFile(`${__dirname}/index.html`);
-});
-
-io.on("connection", function (socket) {
-  socket.emit("news", { hello: "world" });
-  socket.on("my other event", function (data) {
-    console.log(data);
-  });
-});
+module.exports = { current };
