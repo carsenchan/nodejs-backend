@@ -3,7 +3,7 @@ const { current } = require("../../config/time.config");
 describe("Dummy timestamp", () => {
   it("its year should be 2017", () => {
     const currentTimeStamp = current();
-    expect(currentTimeStamp.getFullYear()).toEqual(2017);
+    expect(currentTimeStamp.getFullYear()).toEqual(2019);
   });
   it("its month should be 07", () => {
     const currentTimeStamp = current();

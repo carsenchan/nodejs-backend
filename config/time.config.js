@@ -1,4 +1,4 @@
-const DUMMY_DATE = "2017/07/26";
+const DUMMY_DATE = "2019/07/26";
 
 const current = () => {
   const serverTime = new Date();

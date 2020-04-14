@@ -46,7 +46,7 @@ const getCurrentTickByTicker = (tickerName, currentTime) => {
     // newDate.setMinutes(parseInt(timePart.split(":")[1], 10));
     // newDate.setSeconds(parseInt(timePart.split(":")[2], 10));
     const newDate = convertTime(currentTick.time);
-    return newDate > currentTime;
+    return newDate.getTime() > currentTime.getTime();
   });
 
   if (ticks.length === 0) return undefined;
